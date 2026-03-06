@@ -56,13 +56,4 @@ This plugin uses the following external APIs:
 - **[Jikan API](https://jikan.moe/)** — Unofficial MyAnimeList API for anime search and MAL user favorites import. No authentication required.
 - **Custom sync server** — anachter.dev backend. Stores music and anime lists by Discord user ID.
 
-## Deploying the Sync Server
 
-SuperBoard uses a Cloudflare Worker backend (anachter.dev).
-
-If you want to self-host:
-
-1. Create a Cloudflare Worker.
-2. Create two KV Namespaces: `FAVANIME_KV` (anime) and `FAVMUSIC_KV` (music). Bind both to the worker.
-3. Deploy `favanime-worker.js` as the worker code.
-4. Update `API_BASE` and `MUSIC_API_BASE` in `native.ts` to point to your worker URL.
